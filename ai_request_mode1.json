@@ -1,0 +1,15 @@
+{
+  "user_id": "3",
+  "body_info": null,
+  "mood_tags": [
+    "#Cloudy",
+    "#White",
+    "#Chic",
+    "#male",
+    "#175cm"
+  ],
+  "image_s3_url": "https://mabataki.s3.ap-northeast-2.amazonaws.com/uploads/cbbcecdb-fd89-46c8-9434-173c031332c5.jpg",
+  "user_height_cm": 175.0,
+  "target_clothing_image_url": null,
+  "top_k": 5
+}

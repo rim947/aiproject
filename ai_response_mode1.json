@@ -1,0 +1,74 @@
+{
+  "user_id": "3",
+  "body_info": {
+    "height_cm": 175.0,
+    "shoulder_width": "normal",
+    "torso_length": "normal",
+    "waist_shape": "straight",
+    "hip_shape": "balanced",
+    "overall_build": "full",
+    "leg_shape": "normal",
+    "semantic_descriptors": [
+      "SMPL beta shape signal norm 0.42",
+      "full build",
+      "normal shoulders",
+      "balanced hips",
+      "height 175.0cm"
+    ]
+  },
+  "smpl_betas": [
+    1.0541290044784546,
+    -0.5946073532104492,
+    0.4159161448478699,
+    -0.8880519866943359,
+    0.3096630573272705,
+    -0.36395102739334106,
+    0.2520347237586975,
+    0.024192500859498978,
+    0.2326291799545288,
+    -0.0898008868098259
+  ],
+  "generated_prompt": "casual white linen shirt relaxed fit summer light breathable",
+  "recommendations": [
+    {
+      "id": "item_0007",
+      "title": "Crisp White Dress Shirt",
+      "description": "crisp white poplin dress shirt, slim cut, spread collar, French placket, sharp professional look",
+      "image_url": "https://picsum.photos/seed/fashion7/400/600",
+      "category": "tops",
+      "score": 0.8057707275703766
+    },
+    {
+      "id": "item_0074",
+      "title": "Relaxed Linen Overshirt",
+      "description": "relaxed linen overshirt, unstructured boxy drape, double chest pockets, spring summer casual layer",
+      "image_url": "https://picsum.photos/seed/fashion74/400/600",
+      "category": "tops",
+      "score": 0.7940824035591778
+    },
+    {
+      "id": "item_0120",
+      "title": "Relaxed Linen Overshirt",
+      "description": "relaxed linen overshirt, unstructured boxy drape, double chest pockets, spring summer casual layer",
+      "image_url": "https://picsum.photos/seed/fashion120/400/600",
+      "category": "tops",
+      "score": 0.7940824035591778
+    },
+    {
+      "id": "item_0083",
+      "title": "Relaxed Linen Blazer",
+      "description": "relaxed unstructured linen blazer, single button, soft shoulder, spring summer smart casual",
+      "image_url": "https://picsum.photos/seed/fashion83/400/600",
+      "category": "outerwear",
+      "score": 0.766724054078831
+    },
+    {
+      "id": "item_0009",
+      "title": "Sleeveless Linen Tank",
+      "description": "sleeveless linen tank top, relaxed summer minimalist, breathable natural fabric, wide armhole",
+      "image_url": "https://picsum.photos/seed/fashion9/400/600",
+      "category": "tops",
+      "score": 0.7619440938122504
+    }
+  ]
+}
