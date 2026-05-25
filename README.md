@@ -13,11 +13,11 @@
 
 ## 📂 Project Structure (폴더 구조)
 📁 패션-AI-백엔드-프로젝트 (Root)
-├── 📁 api/
-│   ├── 📄 admin.py
-│   ├── 📄 auth.py
-│   ├── 📄 style.py
-│   └── 📄 user.py
+├── 📁 api/  
+│   ├── 📄 admin.py  
+│   ├── 📄 auth.py  
+│   ├── 📄 style.py  
+│   └── 📄 user.py  
 ├── 📁 core/
 │   ├── 📄 database.py
 │   └── 📄 security.py
