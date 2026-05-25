@@ -12,7 +12,7 @@
 - **Data Format**: JSON
 
 ## 📂 Project Structure (폴더 구조)  
-📁 패션-AI-백엔드-프로젝트 (Root)
+📁 패션-AI-백엔드-프로젝트 (Root)  
 ├── 📁 api/  
 │   ├── 📄 admin.py  
 │   ├── 📄 auth.py  
