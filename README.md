@@ -12,15 +12,37 @@
 - **Data Format**: JSON
 
 ## 📂 Project Structure (폴더 구조)
-```text
-ai_fashion/
-├── main.py            # 서버 실행 및 메인 로직
-├── database.py        # 데이터베이스 연결 및 설정
-├── schema.py          # 데이터 모델 및 스키마 정의
-├── ai_request.json    # AI 요청 데이터 샘플
-├── .gitignore         # 깃허브 제외 파일 설정 (.env 차단)
-└── README.md          # 프로젝트 설명서 (현재 파일)
-
+📁 패션-AI-백엔드-프로젝트 (Root)
+├── 📁 api/
+│   ├── 📄 admin.py
+│   ├── 📄 auth.py
+│   ├── 📄 style.py
+│   └── 📄 user.py
+├── 📁 core/
+│   ├── 📄 database.py
+│   └── 📄 security.py
+├── 📁 docs/
+│   ├── 📄 ai_request_mode1.json
+│   ├── 📄 ai_response_mode1.json
+│   ├── 📄 check_s3.py
+│   └── 📄 set_cors.py
+├── 📁 models/
+│   └── 📄 models.py
+├── 📁 schemas/
+│   └── 📄 schemas.py
+├── 📁 services/
+│   ├── 📄 admin_service.py
+│   ├── 📄 auth_service.py
+│   ├── 📄 style_service.py
+│   └── 📄 user_service.py
+├── 📁 utils/
+│   ├── 📄 image_utils.py
+│   └── 📄 s3_utils.py
+├── 📄 LICENSE
+├── 📄 README.md
+├── 📄 install.sh
+├── 📄 main.py
+└── 📄 requirements.txt
 
 ## Environment Variables (환경 변수 세팅)
 AWS_ACCESS_KEY=YOUR_AWS_ACCESS_KEY_HERE
