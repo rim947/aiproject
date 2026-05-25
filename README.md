@@ -11,38 +11,38 @@
 - **Cloud/Infra**: Amazon Web Services (AWS)
 - **Data Format**: JSON
 
-## 📂 Project Structure (폴더 구조)
+## 📂 Project Structure (폴더 구조)  
 📁 패션-AI-백엔드-프로젝트 (Root)
 ├── 📁 api/  
 │   ├── 📄 admin.py  
 │   ├── 📄 auth.py  
 │   ├── 📄 style.py  
-│   └── 📄 user.py  
-├── 📁 core/
-│   ├── 📄 database.py
-│   └── 📄 security.py
-├── 📁 docs/
-│   ├── 📄 ai_request_mode1.json
-│   ├── 📄 ai_response_mode1.json
-│   ├── 📄 check_s3.py
-│   └── 📄 set_cors.py
-├── 📁 models/
-│   └── 📄 models.py
-├── 📁 schemas/
-│   └── 📄 schemas.py
-├── 📁 services/
-│   ├── 📄 admin_service.py
-│   ├── 📄 auth_service.py
-│   ├── 📄 style_service.py
-│   └── 📄 user_service.py
-├── 📁 utils/
-│   ├── 📄 image_utils.py
-│   └── 📄 s3_utils.py
-├── 📄 LICENSE
-├── 📄 README.md
-├── 📄 install.sh
-├── 📄 main.py
-└── 📄 requirements.txt
+│   └── 📄 user.py   
+├── 📁 core/  
+│   ├── 📄 database.py  
+│   └── 📄 security.py  
+├── 📁 docs/  
+│   ├── 📄 ai_request_mode1.json  
+│   ├── 📄 ai_response_mode1.json  
+│   ├── 📄 check_s3.py   
+│   └── 📄 set_cors.py   
+├── 📁 models/  
+│   └── 📄 models.py  
+├── 📁 schemas/  
+│   └── 📄 schemas.py  
+├── 📁 services/  
+│   ├── 📄 admin_service.py  
+│   ├── 📄 auth_service.py  
+│   ├── 📄 style_service.py  
+│   └── 📄 user_service.py  
+├── 📁 utils/  
+│   ├── 📄 image_utils.py  
+│   └── 📄 s3_utils.py  
+├── 📄 LICENSE  
+├── 📄 README.md  
+├── 📄 install.sh  
+├── 📄 main.py  
+└── 📄 requirements.txt  
 
 ## Environment Variables (환경 변수 세팅)
 AWS_ACCESS_KEY=YOUR_AWS_ACCESS_KEY_HERE
