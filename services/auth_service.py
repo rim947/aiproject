@@ -5,6 +5,8 @@ from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 from models import User
 from schemas import SignupRequest, LoginRequest
+from dotenv import load_dotenv
+load_dotenv()
 
 SECRET_KEY = "fallback-secret-key"  # 주: 실제 환경변수 연동 필요
 ALGORITHM = "HS256"
