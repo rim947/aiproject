@@ -1,5 +1,8 @@
 import os
 import boto3
+from uuid import uuid4
+from fastapi import UploadFile
+from s3 import s3_client, BUCKET_NAME
 from dotenv import load_dotenv
 
 # 환경변수 로드
@@ -16,31 +19,52 @@ s3_client = boto3.client(
     region_name=AWS_REGION
 )
 
-# 💡 아래는 앞으로 utils 폴더에서 자주 쓰게 될 S3 핵심 기능(함수) 예시입니다.
-# 💡 필요에 따라 프로젝트에 맞게 수정해서 사용하세요!
+def upload_to_s3(file: UploadFile) -> str:
+    try:
+        ext = file.filename.split(".")[-1] if "." in file.filename else "jpg"
+        unique_filename = f"uploads/{uuid4()}.{ext}"
 
-def upload_file_to_s3(file_path, object_name=None):
-    """
-    로컬 파일을 S3 버킷에 업로드하는 함수
-    """
-    if object_name is None:
-        object_name = os.path.basename(file_path)
+        file.file.seek(0)
+        s3_client.upload_fileobj(
+            file.file,
+            BUCKET_NAME,
+            unique_filename,
+            ExtraArgs={"ContentType": file.content_type}
+        )
+        s3_url = f"https://{BUCKET_NAME}.s3.{region_name}.amazonaws.com/{unique_filename}"
+        print(f"✅ S3 이미지 업로드 성공: {s3_url}")
+        return s3_url    
+    except Exception as e:
+        print("❌ S3 업로드 중 에러 발생:", str(e))
+        return "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500"
+
+def upload_to_s3_mode2(user_file: UploadFile, item_file: UploadFile) -> tuple[str, str]:
+    try:
+        user_ext = user_file.filename.split(".")[-1] if "." in user_file.filename else "jpg"
+        user_unique = f"uploads/{uuid4()}.{user_ext}"
         
-    try:
-        s3_client.upload_file(file_path, BUCKET_NAME, object_name)
-        # 업로드된 파일의 서비스 URL 반환
-        return f"https://{BUCKET_NAME}.s3.{AWS_REGION}.amazonaws.com/{object_name}"
-    except Exception as e:
-        print(f"S3 업로드 실패: {e}")
-        return None
+        user_file.file.seek(0)
+        s3_client.upload_fileobj(
+            user_file.file,
+            BUCKET_NAME,
+            user_unique,
+            ExtraArgs={"ContentType": user_file.content_type}
+        )
+        user_s3_url = f"https://{BUCKET_NAME}.s3.{region_name}.amazonaws.com/{user_unique}"
 
-def delete_file_from_s3(object_name):
-    """
-    S3 버킷에서 파일을 삭제하는 함수
-    """
-    try:
-        s3_client.delete_object(Bucket=BUCKET_NAME, Key=object_name)
-        return True
+        item_ext = item_file.filename.split(".")[-1] if "." in item_file.filename else "jpg"
+        item_unique = f"uploads/{uuid4()}.{item_ext}"
+        
+        item_file.file.seek(0)
+        s3_client.upload_fileobj(
+            item_file.file,
+            BUCKET_NAME,
+            item_unique,
+            ExtraArgs={"ContentType": item_file.content_type}
+        )
+        item_s3_url = f"https://{BUCKET_NAME}.s3.{region_name}.amazonaws.com/{item_unique}"
+
+        return user_s3_url, item_s3_url
     except Exception as e:
-        print(f"S3 삭제 실패: {e}")
-        return False
+        print(f"❌ S3 모드2 업로드 중 오류 발생: {str(e)}")
+        raise e
