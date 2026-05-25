@@ -1,13 +1,10 @@
-# utils/image_utils.py
-from PIL import Image
-import io
+import httpx
 
-def resize_and_compress_image(image_bytes: bytes, max_size: int = 1024) -> bytes:
-    image = Image.open(io.BytesIO(image_bytes))
-    
-    # 이미지 리사이징 및 압축 처리
-    image.thumbnail((max_size, max_size))
-    output = io.BytesIO()
-    image.save(output, format="JPEG", quality=85)
-    
-    return output.getvalue()
+async def fetch_image_bytes(url: str) -> tuple[bytes, str]:
+    print(f"🔍 이미지 다운로드 시도: {url}")
+    async with httpx.AsyncClient(follow_redirects=True) as http:
+        res = await http.get(url)
+        print(f"🔍 응답 상태코드: {res.status_code}")
+        res.raise_for_status()
+        content_type = res.headers.get("content-type", "image/jpeg").split(";")[0]
+        return res.content, content_type
